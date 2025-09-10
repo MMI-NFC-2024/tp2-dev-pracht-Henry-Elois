@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Test Iframe">
+  <h1>Navigation par Iframe</h1>
+
+  <div class="iframe-controls">
+    <a href="/species/Adelie" target="species-frame">Adelie</a>
+    <a href="/species/Gentoo" target="species-frame">Gentoo</a>
+    <a href="/species/Chinstrap" target="species-frame">Chinstrap</a>
+  </div>
+
+  <iframe
+    name="species-frame"
+    src="/species/Adelie"
+    width="100%"
+    height="500"
+    id="species-iframe"></iframe>
+</Layout>
+
+<style>
+  .iframe-controls {
+    margin: 20px 0;
+  }
+  .iframe-controls a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background: #007acc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .iframe-controls a:hover {
+    background: #005c99;
+  }
+  iframe {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+</style>
+
