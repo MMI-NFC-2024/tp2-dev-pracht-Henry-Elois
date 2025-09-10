@@ -2,12 +2,10 @@
 import PlotFigure from "../../components/PlotFigure.astro";
 import * as Plot from "@observablehq/plot";
 import penguins from "../../assets/penguins.json";
-import Layout from "../../layouts/Layout.astro";
 
 const penguinsGentoo = penguins.filter(({ species }) => species === "Gentoo");
 ---
 
-<Layout>
 <div>
   <h1>Les penguins Gentoo</h1>
   <PlotFigure
@@ -26,4 +24,3 @@ const penguinsGentoo = penguins.filter(({ species }) => species === "Gentoo");
     }}
   />
 </div>
-</Layout>

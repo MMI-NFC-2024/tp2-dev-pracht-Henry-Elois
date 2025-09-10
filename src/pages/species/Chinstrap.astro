@@ -2,25 +2,30 @@
 import PlotFigure from "../../components/PlotFigure.astro";
 import * as Plot from "@observablehq/plot";
 import penguins from "../../assets/penguins.json";
+import Layout from "../../layouts/Layout.astro";
 
-const penguinsChinstrap = penguins.filter(({ species }) => species === "Chinstrap");
+const penguinsChinstrap = penguins.filter(
+  ({ species }) => species === "Chinstrap"
+);
 ---
 
-<div>
-  <h1>Voici une représentation des Penguins Adélie</h1>
-  <PlotFigure
-    options={{
-      grid: true,
-      color: { legend: true },
-      marks: [
-        Plot.dot(penguinsChinstrap, {
-          x: "culmen_length_mm",
-          y: "culmen_depth_mm",
-          stroke: "species",
-          fill: "species",
-          title: (d) => `${d.species}\n${d.island}`,
-        }),
-      ],
-    }}
-  />
-</div>
+<Layout>
+  <div>
+    <h1>Les penguins Chinstrap</h1>
+    <PlotFigure
+      options={{
+        grid: true,
+        color: { legend: true },
+        marks: [
+          Plot.dot(penguinsChinstrap, {
+            x: "culmen_length_mm",
+            y: "culmen_depth_mm",
+            stroke: "species",
+            fill: "species",
+            title: (d) => `${d.species}\n${d.island}`,
+          }),
+        ],
+      }}
+    />
+  </div>
+</Layout>
