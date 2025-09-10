@@ -4,24 +4,32 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <div class="p-4">
-  <h1>Navigation entre les espèces</h1>
+    <h1>Navigation entre les espèces</h1>
 
-  <nav>
-    <ul>
-      <li><a href="/species-iframe/Adelie" target="speciesFrame">Adelie</a></li>
-      <li><a href="/species-iframe/Gentoo" target="speciesFrame">Gentoo</a></li>
-      <li><a href="/species-iframe/Chinstrap" target="speciesFrame">Chinstrap</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li>
+          <a href="/species-iframe/Adelie" target="speciesFrame">Adelie</a>
+        </li>
+        <li>
+          <a href="/species-iframe/Gentoo" target="speciesFrame">Gentoo</a>
+        </li>
+        <li>
+          <a href="/species-iframe/Chinstrap" target="speciesFrame"
+            >Chinstrap</a>
+        </li>
+      </ul>
+    </nav>
 
-  <iframe
-    src="/adelie"
-    name="speciesFrame"
-    id="speciesFrame"
-    width="100%"
-    frameborder="0"
-    onload="resizeIframe(this)"
-  >
-  </iframe>
-</div>
+    <iframe
+      src="/species-iframe/Adelie"
+      name="speciesFrame"
+      id="speciesFrame"
+      width="100%"
+      class="min-h-[800px]"
+      frameborder="0"
+      onload="resizeIframe(this)"
+    >
+    </iframe>
+  </div>
 </Layout>
